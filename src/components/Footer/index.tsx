@@ -7,7 +7,9 @@ const linkGroups = [
     title: "Explore",
     links: [
       { title: "AI tools", href: "/ai-examples" },
-      { title: "Platform", href: "/#features" },
+      { title: "Education", href: "/Resume#education" },
+      { title: "Certifications", href: "/Resume#certifications" },
+      { title: "Resume", href: "/Resume" },
       { title: "Pricing", href: "/pricing" },
     ],
   },
@@ -65,7 +67,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-12 flex flex-col gap-3 border-t border-white/[0.07] pt-5 text-xs text-white/35 sm:flex-row sm:items-center sm:justify-between">
-          <span>AI Tool. All rights reserved.</span>
+          <span>AI Tool. All rights reserved</span>
           <span>Built for what comes next.</span>
         </div>
       </div>

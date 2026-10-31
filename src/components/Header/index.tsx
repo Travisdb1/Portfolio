@@ -5,9 +5,9 @@ import { usePathname } from "next/navigation";
 import { SocialIcons } from "@/components/ui/social-icons";
 
 const navigation = [
-  { label: "Education", href: "/#tools" },
-  { label: "Certifications", href: "/#features" },
-  { label: "Resume", href: "/pricing" },
+  { label: "Education", href: "/Resume#education" },
+  { label: "Certifications", href: "/Resume#certifications" },
+  { label: "Resume", href: "/Resume" },
 ];
 
 const Header = () => {
@@ -35,7 +35,7 @@ const Header = () => {
         <div className="flex items-center gap-0.5">
           {navigation.map((item, index) => {
             const isActive =
-              (item.href === "/pricing" && pathname === "/pricing");
+              (item.href === "/Resume" && pathname === "/Resume");
             return (
               <Link
                 key={item.label}
