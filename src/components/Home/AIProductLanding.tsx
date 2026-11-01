@@ -1,35 +1,11 @@
 import Link from 'next/link';
+import Image from 'next/image';
+import FocusPullCarousel from '@/components/ui/focus-pull-carousel';
+
 
 const tools = [
   {
     number: '01',
-    category: 'Writing',
-    title: 'Content writing',
-    description: 'Turn a blank page into a polished first draft.',
-    href: '/ai-examples/content-writing-tool',
-    color: '#8199ff',
-    size: 'md:col-span-7',
-  },
-  {
-    number: '02',
-    category: 'Strategy',
-    title: 'Business names',
-    description: 'Find a name that gives your next idea a point of view.',
-    href: '/ai-examples/business-name-generator',
-    color: '#d0a6ff',
-    size: 'md:col-span-5',
-  },
-  {
-    number: '03',
-    category: 'Products',
-    title: 'Product names',
-    description: 'Explore memorable names for products and launches.',
-    href: '/ai-examples/product-name-generator',
-    color: '#8fd5c2',
-    size: 'md:col-span-4',
-  },
-  {
-    number: '04',
     category: 'Editorial',
     title: 'Article titles',
     description: 'Give your next article a sharper opening line.',
@@ -38,7 +14,7 @@ const tools = [
     size: 'md:col-span-4',
   },
   {
-    number: '05',
+    number: '02',
     category: 'Data',
     title: 'Spreadsheets',
     description: 'Shape rough instructions into useful spreadsheet output.',
@@ -47,7 +23,7 @@ const tools = [
     size: 'md:col-span-4',
   },
   {
-    number: '06',
+    number: '03',
     category: 'Interviewing',
     title: 'Interview questions',
     description: 'Prepare thoughtful questions for the conversation ahead.',
@@ -159,98 +135,74 @@ export default function AIProductLanding() {
         <div className='relative z-10 mx-auto flex max-w-5xl flex-col items-center'>
           <span className='mb-7 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.035] px-4 py-2 text-[10px] tracking-[0.24em] text-white/60 uppercase sm:text-xs'>
             <span className='size-1.5 rounded-full bg-[#9cb7e5] shadow-[0_0_12px_#9cb7e5]' />
-            Your AI product launchpad
+            Your next investment
           </span>
+          <Image
+            src='/images/hero/formal-portrait.png'
+            alt='Formal portrait'
+            width={183}
+            height={235}
+            className='mb-7 rounded-xl object-cover'
+          />
           <h1
             className='max-w-5xl leading-[0.98] font-medium tracking-[-0.055em] text-white'
-            style={{ fontSize: 'clamp(2rem, 9vw, 6.5rem)' }}
+            style={{ fontSize: 'clamp(1rem, 5vw, 6rem)' }}
           >
-            Big ideas,
-            <br />
-            meet{' '}
-            <span className='font-serif font-normal italic'>momentum.</span>
+            Travis Burke
           </h1>
           <p className='mt-7 max-w-xl text-sm leading-7 text-white/55 sm:text-base sm:leading-8'>
-            Build and launch AI-powered products with a production-ready
-            foundation, practical examples, and the essentials already in place.
+          Marine Corps Veteran with expertise in web development, web design, networking, and satellite communications. Proficient in HTML, CSS, JavaScript, React.js, and Cisco networking devices.
           </p>
           <div className='mt-8 flex flex-wrap items-center justify-center gap-3'>
             <Link
               href='/ai-examples'
               className='group inline-flex items-center gap-2 rounded-full bg-[#f3f3f0] px-6 py-3 text-sm font-medium text-[#111113] transition hover:bg-white'
             >
-              Explore AI tools
+              Will be AI chat for contact
               <ArrowUpRight />
             </Link>
-            <Link
-              href='/docs'
-              className='rounded-full border border-white/15 px-6 py-3 text-sm text-white/75 transition hover:border-white/30 hover:bg-white/[0.04] hover:text-white'
-            >
-              Read the docs
-            </Link>
           </div>
         </div>
 
-        <div className='relative z-10 mx-auto mt-16 w-full max-w-4xl text-left sm:mt-20'>
-          <div className='overflow-hidden rounded-[26px] border border-white/10 bg-[#101012]/90 shadow-[0_40px_140px_rgba(0,0,0,.5)] backdrop-blur-xl'>
-            <div className='flex items-center justify-between border-b border-white/[0.08] px-5 py-4 sm:px-7'>
-              <div className='flex items-center gap-2'>
-                <span className='size-2 rounded-full bg-white/20' />
-                <span className='size-2 rounded-full bg-white/20' />
-                <span className='size-2 rounded-full bg-white/20' />
-              </div>
-              <span className='text-[10px] tracking-[0.22em] text-white/40 uppercase'>
-                AI Tool / Workspace
-              </span>
-              <span className='hidden text-xs text-white/35 sm:block'>
-                Your next idea starts here
-              </span>
-            </div>
-            <div className='grid gap-px bg-white/[0.07] sm:grid-cols-3'>
-              {tools.slice(0, 3).map((tool) => (
-                <Link
-                  key={tool.number}
-                  href={tool.href}
-                  className='group relative min-h-40 overflow-hidden bg-[#101012] p-5 transition hover:bg-[#151518] sm:min-h-48 sm:p-7'
-                >
-                  <span
-                    aria-hidden='true'
-                    className='absolute -top-14 -right-10 size-36 rounded-full opacity-20 blur-3xl transition-opacity group-hover:opacity-40'
-                    style={{ backgroundColor: tool.color }}
-                  />
-                  <span className='relative text-[10px] tracking-[0.2em] text-white/40 uppercase'>
-                    {tool.category}
-                  </span>
-                  <span className='relative mt-8 block text-lg font-medium tracking-tight text-white/90 sm:mt-12'>
-                    {tool.title}
-                  </span>
-                  <span className='absolute right-5 bottom-5 text-white/35 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-white'>
-                    <ArrowUpRight />
-                  </span>
-                </Link>
-              ))}
-            </div>
-            <div className='flex flex-col gap-3 border-t border-white/[0.08] px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-7'>
-              <span className='text-xs text-white/45'>
-                One flexible foundation. Room to make it yours.
-              </span>
-              <Link
-                href='/ai-examples'
-                className='text-xs text-white/75 transition hover:text-white'
-              >
-                Browse all examples <span aria-hidden='true'>→</span>
-              </Link>
-            </div>
-          </div>
+        <div className='relative z-10 mx-auto mt-16 w-full max-w-5xl sm:mt-20'>
+          <FocusPullCarousel
+            height='clamp(360px, 48vw, 520px)'
+            cardWidth='min(70vw, 720px)'
+            background='#101012'
+            ink='#f2efe8'
+            className='rounded-[26px] border border-white/10 shadow-[0_40px_140px_rgba(0,0,0,.5)]'
+            slides={[
+              {
+                image: '/images/hero/html-badge.png',
+                title: 'HTML & CSS',
+                caption: 'Professional Web Designer 2026-2029',
+              },
+              {
+                image: '/images/hero/javascript-badge.webp',
+                title: 'JavaScript',
+                caption: 'Professional Developer 2026-2029',
+              },
+              {
+                image: '/images/hero/react-badge.webp',
+                title: 'React.js',
+                caption: 'TBD',
+              },
+              {
+                image: '/images/hero/mysql-badge.png',
+                title: 'MySQL',
+                caption: 'TBD',
+              },
+              {
+                image: '/images/hero/python-badge.png',
+                title: 'Python',
+                caption: 'TBD',
+              },
+              
+            ]}
+          />
         </div>
 
-        <a
-          href='#tools'
-          className='absolute bottom-7 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-3 text-[10px] tracking-[0.24em] text-white/35 uppercase transition hover:text-white/65 sm:flex'
-        >
-          Explore
-          <span className='h-8 w-px bg-gradient-to-b from-white/50 to-transparent' />
-        </a>
+
       </section>
 
       <section
@@ -259,10 +211,10 @@ export default function AIProductLanding() {
       >
         <div className='mx-auto max-w-[1200px] px-5 sm:px-8 lg:px-12'>
           <SectionHeading
-            eyebrow='AI examples'
-            title='A good place to'
-            accent='begin.'
-            description='Try focused tools for the everyday work of making something new. Each example is ready to explore and easy to build on.'
+            eyebrow='Projects Portfolio'
+            title='Professional & Personal Projects'
+            accent=':'
+            description='From sleek, professional websites to bold, creative designs, I bring your vision to life with a style tailored to your needs.'
           />
 
           <div className='grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-12 md:gap-4'>
@@ -358,21 +310,6 @@ export default function AIProductLanding() {
               Explore the examples, find your starting point, and shape the
               foundation around your product.
             </p>
-            <div className='mt-8 flex flex-wrap justify-center gap-3'>
-              <Link
-                href='/ai-examples'
-                className='inline-flex items-center gap-2 rounded-full bg-[#f3f3f0] px-6 py-3 text-sm font-medium text-[#111113] transition hover:bg-white'
-              >
-                Explore AI tools
-                <ArrowUpRight />
-              </Link>
-              <Link
-                href='/pricing'
-                className='rounded-full border border-white/15 px-6 py-3 text-sm text-white/75 transition hover:border-white/30 hover:bg-white/[0.04] hover:text-white'
-              >
-                View pricing
-              </Link>
-            </div>
           </div>
         </div>
       </section>

@@ -9,7 +9,7 @@ import EmailProvider from "next-auth/providers/email";
 
 export const authOptions: NextAuthOptions = {
   pages: {
-    signIn: "/auth/signin",
+    signIn: "/",
   },
   adapter: PrismaAdapter(prisma),
   secret: process.env.SECRET,
